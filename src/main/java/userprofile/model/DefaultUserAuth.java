@@ -1,7 +1,5 @@
 package userprofile.model;
 
-import userprofile.model.api.UserAuth;
-
 public class DefaultUserAuth implements UserAuth {
 
  private Tokens tokens;

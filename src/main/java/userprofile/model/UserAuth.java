@@ -1,6 +1,4 @@
-package userprofile.model.api;
-
-import userprofile.model.RadioException;
+package userprofile.model;
 
 public interface UserAuth {
  String authenticate(String user, String password) throws RadioException;

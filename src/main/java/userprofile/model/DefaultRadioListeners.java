@@ -2,9 +2,6 @@ package userprofile.model;
 
 import java.util.Optional;
 
-import userprofile.model.api.RadioListener;
-import userprofile.model.api.RadioListeners;
-
 public class DefaultRadioListeners implements RadioListeners {
 
  private RadioListenerRepository repository;

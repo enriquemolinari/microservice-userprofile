@@ -5,9 +5,10 @@ import java.util.Optional;
 
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
-import userprofile.model.api.RadioListener;
-import userprofile.model.api.RadioListeners;
-import userprofile.model.api.UserAuth;
+import userprofile.model.RadioException;
+import userprofile.model.RadioListener;
+import userprofile.model.RadioListeners;
+import userprofile.model.UserAuth;
 
 public class Web {
 
@@ -24,28 +25,49 @@ public class Web {
  public void start() {
   Javalin app = Javalin.create().start(this.webPort);
   app.get("/listener/:id", listener());
-//   app.post("/listener", addListener());
+  app.post("/listener", addListener());
+  app.post("/authenticate", auth());
+
+  app.exception(RadioException.class, (e, ctx) -> {
+   ctx.json(Map.of("result", "error", "message", e.getMessage()));
+   // log error in a stream...
+  });
 
   app.exception(Exception.class, (e, ctx) -> {
-   ctx.json(Map.of("error", "Ups, somethong went wrong..."));
+   ctx.json(
+     Map.of("result", "error", "message", "Ups, somethong went wrong"));
    System.out.println(e.getMessage());
    // log error in a stream...
   });
  }
 
+ private Handler addListener() {
+  return ctx -> {
+   ListenerData dto = ctx.bodyAsClass(ListenerData.class);
+   this.listeners.newListener(dto.getPersonId(), dto.getName(),
+     dto.getLastName(), dto.getPhone(), dto.getEmail(), dto.getUser(),
+     dto.getPwd());
+   ctx.json(Map.of("result", "success"));
+  };
+ }
+
  private Handler listener() {
   return ctx -> {
-//    var i = ;
    Optional<RadioListener> l = this.listeners
      .listener(ctx.pathParam("id", Integer.class).get());
 
-   ctx.json(l.map((l1) -> Map.of("name", l1.name(), "lastname", l1.name(),
-     "email", l1.email())).orElse(Map.of()));
+   ctx.json(l
+     .map((l1) -> Map.of("result", "sucess", "personId", l1.personId(),
+       "name", l1.name(), "lastName", l1.name(), "email", l1.email()))
+     .orElse(Map.of()));
+  };
+ }
 
-   // listeners.listener(1);
-   // listeners.newListener(personId, name, surname, phone, email, userName, pwd);
-   // users.authenticate(user, password)
-   // users.validate(token);
+ private Handler auth() {
+  return ctx -> {
+   AuthData dto = ctx.bodyAsClass(AuthData.class);
+   String token = this.auth.authenticate(dto.user(), dto.pwd());
+   ctx.json(Map.of("result", "success", "token", token));
   };
  }
 }

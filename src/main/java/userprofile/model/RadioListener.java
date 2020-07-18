@@ -1,4 +1,4 @@
-package userprofile.model.api;
+package userprofile.model;
 
 public interface RadioListener {
  String personId();

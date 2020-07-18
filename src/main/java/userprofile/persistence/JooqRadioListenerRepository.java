@@ -45,7 +45,7 @@ public class JooqRadioListenerRepository
  public Optional<ListenerUser> listener(int id) {
   return tx.execute(create -> {
    var record = create
-     .select(LISTENER.ID_LISTENER, LISTENER.NAME, LISTENER.SURNAME,
+     .select(LISTENER.ID_LISTENER, LISTENER.PERSON_ID, LISTENER.NAME, LISTENER.SURNAME,
        LISTENER.PHONE, LISTENER.EMAIL, LISTENER_USER.USERNAME, LISTENER_USER.PASSWORD)
      .from(LISTENER).join(LISTENER_USER).on(LISTENER_USER.ID_LISTENER.eq(LISTENER.ID_LISTENER))
      .where(LISTENER.ID_LISTENER.eq(id)).fetchOne();

@@ -1,4 +1,4 @@
-package userprofile.model.api;
+package userprofile.model;
 
 import java.util.Optional;
 
