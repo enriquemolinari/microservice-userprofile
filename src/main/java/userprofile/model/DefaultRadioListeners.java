@@ -14,12 +14,12 @@ public class DefaultRadioListeners implements RadioListeners {
  }
 
  @Override
- public void newListener(String personId, String name, String surname,
+ public int newListener(String personId, String name, String surname,
    String phone, String email, String username, String pwd) {
   var listener = new DefaultListener(personId, name, surname, email, phone,
     username, usersName, pwd);
 
-  repository.addListener(listener);
+  return repository.addListener(listener);
  }
 
  @Override

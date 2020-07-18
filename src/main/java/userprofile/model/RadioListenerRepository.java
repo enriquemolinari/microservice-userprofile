@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public interface RadioListenerRepository {
 
- void addListener(ListenerUser l);
+ int addListener(ListenerUser l);
 
  Optional<ListenerUser> listener(int id);
 }
