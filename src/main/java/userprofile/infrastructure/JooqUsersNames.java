@@ -1,6 +1,6 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
-import static userprofile.persistence.jooq.tables.ListenerUser.LISTENER_USER;
+import static userprofile.infrastructure.jooq.tables.ListenerUser.LISTENER_USER;
 
 import userprofile.model.RadioException;
 import userprofile.model.UsersNames;

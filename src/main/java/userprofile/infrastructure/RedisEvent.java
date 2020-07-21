@@ -1,4 +1,4 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
 import redis.clients.jedis.Jedis;
 import userprofile.model.Event;

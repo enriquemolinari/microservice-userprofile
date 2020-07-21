@@ -1,4 +1,4 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

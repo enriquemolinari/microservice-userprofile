@@ -1,7 +1,7 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
-import static userprofile.persistence.jooq.tables.Token.TOKEN;
-import static userprofile.persistence.jooq.tables.UserAudit.USER_AUDIT;
+import static userprofile.infrastructure.jooq.tables.Token.TOKEN;
+import static userprofile.infrastructure.jooq.tables.UserAudit.USER_AUDIT;
 
 import java.time.LocalDateTime;
 import java.util.Optional;

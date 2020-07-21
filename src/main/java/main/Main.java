@@ -2,15 +2,15 @@ package main;
 
 import java.util.Objects;
 
+import userprofile.infrastructure.JooqRadioListenerRepository;
+import userprofile.infrastructure.JooqTokens;
+import userprofile.infrastructure.JooqUsers;
+import userprofile.infrastructure.JooqUsersNames;
+import userprofile.infrastructure.RedisEvent;
+import userprofile.infrastructure.Tx;
 import userprofile.model.DefaultRadioListeners;
 import userprofile.model.DefaultUserAuth;
 import userprofile.model.PublishNewListener;
-import userprofile.persistence.JooqRadioListenerRepository;
-import userprofile.persistence.JooqTokens;
-import userprofile.persistence.JooqUsers;
-import userprofile.persistence.JooqUsersNames;
-import userprofile.persistence.RedisEvent;
-import userprofile.persistence.Tx;
 import userprofile.web.Web;
 
 public class Main {

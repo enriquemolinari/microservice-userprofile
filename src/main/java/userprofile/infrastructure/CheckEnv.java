@@ -1,4 +1,4 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
 class CheckEnv {
  private String value;

@@ -1,7 +1,7 @@
-package userprofile.persistence;
+package userprofile.infrastructure;
 
-import static userprofile.persistence.jooq.tables.Listener.LISTENER;
-import static userprofile.persistence.jooq.tables.ListenerUser.LISTENER_USER;
+import static userprofile.infrastructure.jooq.tables.Listener.LISTENER;
+import static userprofile.infrastructure.jooq.tables.ListenerUser.LISTENER_USER;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
