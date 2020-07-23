@@ -26,13 +26,19 @@ public class Main {
   String pass = Objects.requireNonNull(System.getProperty("pwd"),
     "specify a database pwd as a jvm argument");
 
+  String pubsub = Objects
+    .requireNonNullElse(System.getProperty("pub-sub-server"), "localhost");
+
+  String pubsubPort = Objects
+    .requireNonNullElse(System.getProperty("pub-sub-port"), "6379");
+
   var tx = new Tx(connString, user, pass);
 
   new Web(
     new PublishNewListener(
       new DefaultRadioListeners(new JooqRadioListenerRepository(tx),
         new JooqUsersNames(tx)),
-      new RedisEvent("localhost", 6379)),
+      new RedisEvent(pubsub, Integer.valueOf(pubsubPort))),
     new DefaultUserAuth(new JooqTokens(tx), new JooqUsers(tx)), 7001)
       .start();
  }
