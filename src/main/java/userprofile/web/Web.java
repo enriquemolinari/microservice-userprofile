@@ -57,7 +57,7 @@ public class Web {
      .listener(ctx.pathParam("id", Integer.class).get());
 
    ctx.json(l
-     .map((l1) -> Map.of("result", "sucess", "personId", l1.personId(),
+     .map((l1) -> Map.of("result", "success", "personId", l1.personId(),
        "name", l1.name(), "lastName", l1.name(), "email", l1.email()))
      .orElse(Map.of()));
   };
