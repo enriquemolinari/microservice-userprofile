@@ -2,6 +2,10 @@ package userprofile.model;
 
 import java.util.Optional;
 
+import userprofile.model.ports.Event;
+import userprofile.model.ports.RadioListener;
+import userprofile.model.ports.RadioListeners;
+
 public class PublishNewListener implements RadioListeners {
 
  private static final String EVENT_NAME = "new-listener";

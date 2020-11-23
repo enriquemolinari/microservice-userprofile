@@ -1,5 +1,12 @@
 package userprofile.model;
 
+import userprofile.model.ports.RadioException;
+import userprofile.model.ports.Token;
+import userprofile.model.ports.Tokens;
+import userprofile.model.ports.User;
+import userprofile.model.ports.UserAuth;
+import userprofile.model.ports.Users;
+
 public class DefaultUserAuth implements UserAuth {
 
  private Tokens tokens;

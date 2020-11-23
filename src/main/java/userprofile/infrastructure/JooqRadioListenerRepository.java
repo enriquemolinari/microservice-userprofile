@@ -8,8 +8,8 @@ import java.util.Optional;
 
 import org.jooq.Record1;
 
-import userprofile.model.ListenerUser;
-import userprofile.model.RadioListenerRepository;
+import userprofile.model.ports.ListenerUser;
+import userprofile.model.ports.RadioListenerRepository;
 
 public class JooqRadioListenerRepository
   implements RadioListenerRepository {

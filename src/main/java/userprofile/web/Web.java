@@ -5,10 +5,10 @@ import java.util.Optional;
 
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
-import userprofile.model.RadioException;
-import userprofile.model.RadioListener;
-import userprofile.model.RadioListeners;
-import userprofile.model.UserAuth;
+import userprofile.model.ports.RadioException;
+import userprofile.model.ports.RadioListener;
+import userprofile.model.ports.RadioListeners;
+import userprofile.model.ports.UserAuth;
 
 public class Web {
 

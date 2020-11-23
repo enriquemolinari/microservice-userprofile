@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
-import userprofile.model.Token;
-import userprofile.model.Tokens;
-import userprofile.model.User;
+import userprofile.model.ports.Token;
+import userprofile.model.ports.Tokens;
+import userprofile.model.ports.User;
 
 public class JooqTokens implements Tokens {
 

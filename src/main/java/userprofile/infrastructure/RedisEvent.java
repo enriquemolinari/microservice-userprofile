@@ -1,7 +1,7 @@
 package userprofile.infrastructure;
 
 import redis.clients.jedis.Jedis;
-import userprofile.model.Event;
+import userprofile.model.ports.Event;
 
 public class RedisEvent implements Event {
 

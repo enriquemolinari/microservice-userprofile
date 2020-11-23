@@ -1,4 +1,4 @@
-package userprofile.model;
+package userprofile.model.ports;
 
 public interface UserAuth {
  String authenticate(String user, String password) throws RadioException;

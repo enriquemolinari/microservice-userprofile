@@ -2,8 +2,8 @@ package userprofile.infrastructure;
 
 import static userprofile.infrastructure.jooq.tables.ListenerUser.LISTENER_USER;
 
-import userprofile.model.RadioException;
-import userprofile.model.UsersNames;
+import userprofile.model.ports.RadioException;
+import userprofile.model.ports.UsersNames;
 
 public class JooqUsersNames implements UsersNames {
  private Tx tx;

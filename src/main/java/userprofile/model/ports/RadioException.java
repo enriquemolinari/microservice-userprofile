@@ -1,4 +1,4 @@
-package userprofile.model;
+package userprofile.model.ports;
 
 public class RadioException extends RuntimeException {
 

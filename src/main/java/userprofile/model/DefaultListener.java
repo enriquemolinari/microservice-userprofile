@@ -1,5 +1,8 @@
 package userprofile.model;
 
+import userprofile.model.ports.ListenerUser;
+import userprofile.model.ports.UsersNames;
+
 class DefaultListener implements ListenerUser {
 
 	private String personId;
